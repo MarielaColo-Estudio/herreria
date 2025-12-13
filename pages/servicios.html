@@ -1,57 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <H2>Herrería</H2>
-    <p>Realizamos reparaciones de rejas, portones, puertas y fabricacion a medida.</p>
 
-     <h3>Escaleras</h3>
-     <p>Fabricamos escalera a medida del espacio disponivle y a gusto del cliente, ofreciendole, siempre, la mejor 
-    opcion personalizada</p>
+<main class="container my-5">
 
-     <h3>Estructuras</h3>
-     <p>Fabricamos estructuras para tus ideas, como entre pisos, estanterias, alacenas</p>
+  <!-- HERRERÍA -->
+  <section class="servicios">
+    <h2 class="section-title">Herrería</h2>
+    <p class="section-intro">
+      Realizamos reparaciones y fabricaciones a medida en hierro, adaptándonos a cada espacio y necesidad.
+    </p>
 
-     <h3>Portones</h3>
-     <p>fabricamos o reparamos tu porton adaptado a epacios y requerimientos</p>
+    <div class="row g-4">
+      <article class="col-md-4">
+        <div class="card servicio-card">
+          <div class="card-body">
+            <h3 class="card-title">Escaleras</h3>
+            <p class="card-text">
+              Fabricación de escaleras a medida, optimizando el espacio y respetando el diseño elegido.
+            </p>
+          </div>
+        </div>
+      </article>
 
-     <h3>Mesas</h3>
-     <p>Si te gusta el diseño industrial, fabricamos mesas, desayunadores, etc;  
-        Combinando hierro y madera.</p>
+      <article class="col-md-4">
+        <div class="card servicio-card">
+          <div class="card-body">
+            <h3 class="card-title">Estructuras</h3>
+            <p class="card-text">
+              Entrepisos, estanterías, alacenas y estructuras metálicas para proyectos personalizados.
+            </p>
+          </div>
+        </div>
+      </article>
 
-     <h3>Estanterias - Alacenas</h3>
-     <p>Mostranos tu idea y nosotros la hacemos realidad, con base de hierro.</p>
+      <article class="col-md-4">
+        <div class="card servicio-card">
+          <div class="card-body">
+            <h3 class="card-title">Portones</h3>
+            <p class="card-text">
+              Fabricación y reparación de portones adaptados al espacio y requerimientos del cliente.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-    <h2>Carpintería</h2>
-    <p>Ofrecemos servicios de carpintería especificamente en techos de machimbre y entre pisos.</p>
+  <!-- CARPINTERÍA -->
+  <section class="servicios mt-5">
+    <h2 class="section-title">Carpintería</h2>
+    <p class="section-intro">
+      Trabajos en madera enfocados en estructuras funcionales y terminaciones de calidad.
+    </p>
 
-     <h3>Entre pisos</h3>
-     <p>Realizamos entre pisos de madera o con estuctura de hierro y piso de madera.</p>
+    <div class="row g-4">
+      <article class="col-md-6">
+        <div class="card servicio-card">
+          <div class="card-body">
+            <h3 class="card-title">Entrepisos</h3>
+            <p class="card-text">
+              Entrepisos de madera o combinados con estructura de hierro.
+            </p>
+          </div>
+        </div>
+      </article>
 
-     <h3>Techos</h3>
-     <p>Colocamos techos de machimbre</p>
+      <article class="col-md-6">
+        <div class="card servicio-card">
+          <div class="card-body">
+            <h3 class="card-title">Techos</h3>
+            <p class="card-text">
+              Colocación de techos de machimbre con excelente terminación.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-    <h2>Construccion en seco</h2>
-    <p>sistema de construcción moderno, ensamblando materiales como perfiles de acero galvanizado
-        o madera y placas mediante sistemas mecánicos para levantar estructuras</p>
+  <!-- CONSTRUCCIÓN EN SECO -->
+  <section class="servicios mt-5">
+    <h2 class="section-title">Construcción en seco</h2>
+    <p class="section-intro">
+      Sistema moderno, limpio y eficiente para optimizar tiempos y costos de obra.
+    </p>
 
-     <h3>Paredes de placas de yeso</h3>
-     <p>Este tipo de construcción ofrece ventajas de mayor velocidad, limpieza,
-        aislamiento térmico/acústico, menos desperdicios y sustentabilidad,</p>
+    <div class="row g-4">
+      <article class="col-md-4">
+        <div class="card servicio-card">
+          <div class="card-body">
+            <h3 class="card-title">Placas de yeso</h3>
+            <p class="card-text">
+              Paredes interiores con excelente aislación térmica y acústica.
+            </p>
+          </div>
+        </div>
+      </article>
 
-     <h3>Cielos razos</h3>
-     <p>Opción rápida, económica y moderna para tu cielo razo</p>
+      <article class="col-md-4">
+        <div class="card servicio-card">
+          <div class="card-body">
+            <h3 class="card-title">Cielorrasos</h3>
+            <p class="card-text">
+              Solución rápida, económica y moderna para cielos rasos.
+            </p>
+          </div>
+        </div>
+      </article>
 
-     <h3>Cerramientos de aluminios</h3>
-     <p>Estas buscando una solución para cerrar tu altillo, lavadero, etc sin gastar de más, acá
-        te brindamos opciones personalizadas.</p>
+      <article class="col-md-4">
+        <div class="card servicio-card">
+          <div class="card-body">
+            <h3 class="card-title">Cerramientos</h3>
+            <p class="card-text">
+              Cerramientos de aluminio para altillos, lavaderos y más.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

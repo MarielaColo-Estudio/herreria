@@ -1,47 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Responsabilidad, personalización y calidad en cada servicio</h1>
-    <p>Nos caracteriza el compromiso con la calidad y la flexibilidad, 
-    ofreciendo soluciones de herrería pensadas para cada cliente y cada presupuesto.</p>
-    
-    <button>Solicitar visita</button>
 
-    <h2>Misión</h2>
-    <p>Brindar soluciones de herrería de alta calidad, combinando diseño, 
-        precisión y durabilidad para satisfacer las necesidades de cada cliente.</p>
-    <h2>Visión</h2>
-    <p>Ser una empresa de referencia en herrería, reconocida por la
-         excelencia en nuestros trabajos y la confianza construida con nuestros clientes.</p>
-    <h2>Valores</h2>
-    <p>Calidad: Trabajo cuidadoso, resistente y bien terminado.
+<main class="container my-5 nosotros">
 
-Compromiso: Cumplimos tiempos y acuerdos en cada proyecto.
+  <!-- INTRO -->
+  <section class="nosotros-intro text-center mb-5">
+    <h1 class="nosotros-title">
+      Responsabilidad, personalización y calidad en cada servicio
+    </h1>
 
-Honestidad: Transparencia en presupuestos y procesos.
+    <p class="nosotros-text">
+      Nos caracteriza el compromiso con la calidad y la flexibilidad,
+      ofreciendo soluciones de herrería pensadas para cada cliente y cada presupuesto.
+    </p>
 
-Responsabilidad: Prioridad en la seguridad y el buen servicio.
+    <a href="./contacto.html" class="btn btn-primary mt-3">
+      Solicitar visita
+    </a>
+  </section>
 
-Innovación: Búsqueda constante de mejores técnicas y soluciones.</p>
-<h2>¿Por qué elegirnos?</h2>
-<p>Experiencia y oficio: Contamos con amplia trayectoria en trabajos de herrería a medida.
+  <!-- MISIÓN / VISIÓN / VALORES -->
+  <section class="nosotros-valores">
+    <div class="row g-4">
 
-Calidad garantizada: Utilizamos materiales resistentes y técnicas precisas para asegurar resultados duraderos.
+      <article class="col-md-4">
+        <div class="card nosotros-card">
+          <div class="card-body">
+            <h2 class="card-title">Misión</h2>
+            <p class="card-text">
+              Brindar soluciones de herrería de alta calidad, combinando diseño,
+              precisión y durabilidad para satisfacer las necesidades de cada cliente.
+            </p>
+          </div>
+        </div>
+      </article>
 
-Atención personalizada: Escuchamos cada necesidad y ofrecemos soluciones adaptadas a cada cliente y presupuesto.
+      <article class="col-md-4">
+        <div class="card nosotros-card">
+          <div class="card-body">
+            <h2 class="card-title">Visión</h2>
+            <p class="card-text">
+              Ser una empresa de referencia en herrería, reconocida por la excelencia
+              en nuestros trabajos y la confianza construida con nuestros clientes.
+            </p>
+          </div>
+        </div>
+      </article>
 
-Cumplimiento y seriedad: Respetamos los tiempos acordados y trabajamos con total responsabilidad.
+      <article class="col-md-4">
+        <div class="card nosotros-card">
+          <div class="card-body">
+            <h2 class="card-title">Valores</h2>
+            <ul class="list-unstyled">
+              <li><strong>Calidad:</strong> Trabajo cuidado y resistente.</li>
+              <li><strong>Compromiso:</strong> Cumplimos tiempos y acuerdos.</li>
+              <li><strong>Honestidad:</strong> Transparencia en presupuestos.</li>
+              <li><strong>Responsabilidad:</strong> Seguridad y buen servicio.</li>
+              <li><strong>Innovación:</strong> Mejora constante.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
 
-Versatilidad en proyectos: Desde reparaciones hasta estructuras y diseños personalizados, abordamos todo tipo de trabajos.</p>
+    </div>
+  </section>
 
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="nosotros-elegir mt-5">
+    <h2 class="section-title text-center mb-4">¿Por qué elegirnos?</h2>
+
+    <div class="row g-4">
+      <article class="col-md-6">
+        <ul class="list-group list-group-flush elegir-list">
+          <li class="list-group-item">✔ Experiencia y oficio</li>
+          <li class="list-group-item">✔ Calidad garantizada</li>
+          <li class="list-group-item">✔ Atención personalizada</li>
+        </ul>
+      </article>
+
+      <article class="col-md-6">
+        <ul class="list-group list-group-flush elegir-list">
+          <li class="list-group-item">✔ Cumplimiento y seriedad</li>
+          <li class="list-group-item">✔ Versatilidad en proyectos</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
