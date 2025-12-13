@@ -13,11 +13,11 @@ a{
     font-size: 25px;
     font-weight: bold;
     color: rgb(35, 24, 24);
-    text-align: center;
+    text-align: left;
     text-decoration: none;
 }
 .logotipo{
-    width: 10rem;
+    width: 10rem; text-align: center;
 }
 .enlace{
     display: flex;  
@@ -25,14 +25,14 @@ a{
     gap: 20px;
 }
 .index-nav a{
-    color: rgb(141, 198, 198);
+    color: rgb(28, 25, 23);
     text-align: center;  
 
 
 }
 .index-header-botones{
-    background-color: rgb(197, 170, 223);
-    color: #fff;
+    background-color: rgb(184, 149, 217);
+    color: #ca7272;
 }
 /* main */
 .h2-main{
@@ -42,7 +42,7 @@ a{
     font-weight: bold;
 }
 .main-card-servicio {
-    background-color: rgb(107, 107, 67);
+    background-color: rgb(155, 155, 71);
     width: 15rem;   
     display: flex ;  
     justify-content: center;
@@ -58,12 +58,43 @@ a{
 
 /* footer */
 footer{
-    background-color: rgb(136, 128, 128);
+    background-color: rgb(159, 71, 71);
 }
 footer h2, footer a{ 
-    color: #fff;
+    color: #ca4e4e;
     
 }
 .logosfooter{
     width: 15%;
+}
+
+.contenedor-grilla{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5 200px;
+    grid-template-areas:
+    "header header header"
+    "main main main"
+    "article article article"
+    "footer footer footer";
+}
+header{
+    background-color: rgb(136, 255, 215);
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 10px; /* columna / fila*/; grid-area: header;
+}
+
+main{
+    background-color: rgb(36, 79, 65);
+    grid-area: main;
+}
+
+footer{
+    background-color: rgb(4, 53, 53); 
+    grid-area: footer;
+}
+
+article{
+    background-color: rgb(26, 161, 161);
+    grid-area: article;
 }
