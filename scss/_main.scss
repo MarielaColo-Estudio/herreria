@@ -93,6 +93,27 @@ display: grid;
   transform: translate(30%, 30%);
 }
 
+.nosotros-elegir {
+  background: linear-gradient(135deg, rgba(32, 110, 58, 0.10), rgba(255, 255, 255, 0.35));
+  border: 1px solid rgba(32, 110, 58, 0.20);
+  border-radius: 18px;
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  max-width: 1100px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.nosotros-elegir .h2-main {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+}
+.elegir-list .list-group {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
 
 .nosotros-valores {
   display: grid;
@@ -116,4 +137,97 @@ display: grid;
   .nosotros-valores {
     grid-template-columns: 1fr;  /* una columna en móvil - responsive*/
   }
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+  grid-auto-rows: 1fr;                   /* filas iguales */
+  gap: 1.5rem;                           /* separación */
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgba(17, 49, 28, 0.1);
+  border-radius: 18px;
+  border: 1px solid rgba(32, 110, 58, 0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.servicio-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación sutil al pasar el mouse */
+.servicio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 1200px) {
+  .servicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.servicio-texto {
+  background: linear-gradient(135deg, rgba(32, 110, 58, 0.10), rgba(255, 255, 255, 0.4));
+  border: 1px solid rgba(32, 110, 58, 0.25);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: entrada 1s ease;
+}
+
+.servicio-texto .h2-main {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Animación de entrada */
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slider {
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 18px;
+  margin-top: 2rem;
+}
+
+.slider-track {
+  display: flex;
+  width: 300%; /* 3 imágenes = 300% */
+  transition: transform 0.8s ease;
+}
+
+.slider-track img {
+  width: 100%;
+  flex: 0 0 100%;
+  object-fit: cover;
 }
