@@ -1,0 +1,47 @@
+main {
+  padding: 30px;
+  text-align: center;
+}
+
+/* Sección servicios */
+.servicios {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap; // por si achica la pantalla
+}
+
+/* Card */
+.main-card-servicio {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Imagen */
+.main-card-servicio-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Títulos */
+.h3-main {
+  font-family: $font-bebas;
+  margin-bottom: 10px;
+}
+
+/* Texto */
+.main-card-servicio p {
+   flex-grow: 1;
+   font-family: $font-roboto;
+   margin-bottom: 15px;
+}
