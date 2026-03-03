@@ -37,7 +37,20 @@
             <h2>Nuevo Presupuesto</h2>
 
             <form id="formPresupuesto">
+                <h3>Datos del Cliente</h3>
 
+                <label>Nombre</label>
+                <input type="text" id="cliente" required>
+
+                <label>Email</label>
+                <input type="email" id="email" required>
+
+                <label>Teléfono</label>
+                <input type="tel" id="telefono" required>
+
+                <hr>
+
+                <h3>Datos del Trabajo</h3>
                 <label>Tipo de trabajo</label>
                 <select id="tipo" required>
                     <option value="">Seleccionar</option>
@@ -74,6 +87,8 @@
                 </div>
 
                 <button type="submit">Calcular Presupuesto</button>
+                <div id="notificacion" class="notificacion oculto"></div>
+                <p id="mensajeError" class="error"></p>
 
             </form>
         </section>
@@ -81,8 +96,34 @@
         <section class="result-section">
             <h2>Presupuestos Generados</h2>
             <div id="resultado"></div>
+                <div class="estadisticas">
+                    <p>Total presupuestos: <span id="cantidad">0</span></p>
+                    <p>Total acumulado: $<span id="totalAcumulado">0</span></p>
+                </div>
             <button id="btnBorrar">Borrar Historial</button>
+    
         </section>
+
+        <div id="modalTurno" class="modal oculto">
+            <div class="modal-contenido">
+                <h3>Agendar Turno</h3>
+
+                <label>Seleccione fecha</label>
+                <input type="date" id="fechaTurno">
+
+                <label>Seleccione horario</label>
+                <select id="horaTurno">
+                    <option value="">Seleccionar</option>
+                    <option value="09:00">09:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="16:00">16:00</option>
+                </select>
+
+                <button onclick="confirmarTurno()">Confirmar Turno</button>
+                <button onclick="cerrarModal()">Cancelar</button>
+            </div>
+        </div>
 
     </main>
  
@@ -114,7 +155,7 @@
             <p class="derechos-footer">todos los derechos reservados © 2025 Soluciones Ezequiel</p>
         
     </footer>
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
