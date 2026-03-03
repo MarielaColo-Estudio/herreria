@@ -1,108 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <h1 class="h1-header">Herrería a medida, resistente y funcional para tu hogar y tu negocio</h1>
-        <div class="div-enlace-header">
-            <nav class="index-nav" aria-current="Contacto">
-                <img class="logotipo" src="../img/logo-solu.jpg" alt="logotipo de Soluciones Ezequiel">
-            
-                <ul class="enlace">
-            
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">nosotros</a></li>
-                    <li><a href="servicios.html">servicios</a></li>
-                    <li><a href="galeria.html">galeria</a></li>
-                    <li><a href="presupuesto.html">presupuesto</a></li>
-                    
-                </ul>
-            </nav>
-        </div>
-  </header>
 
+<!-- Navbar responsive -->
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">
+        <img src="../img/logo-solu.jpg" alt="Logotipo Soluciones Ezequiel" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="presupuesto.html">Presupuesto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
 
-    <main>
-        <article class="contactame">
-            <h2 class="h2-main">Contacto</h2>
-            <p class="main-construccion">Nos apasiona ayudar a cumplir los sueños a nuestros clientes.
-            Si pensas que somos los indicados para tu proyecto no dudes en comunicarte con nostros.
-            </p>
-        </article>
+<main class="container my-5">
 
+    <!-- Introducción -->
+    <section class="text-center mb-5">
+        <h1 class="mb-3">Herrería a medida, resistente y funcional</h1>
+        <p>Nos apasiona ayudar a cumplir los sueños a nuestros clientes. Si pensás que somos los indicados para tu proyecto, no dudes en contactarnos.</p>
+    </section>
 
-        <section class="servicios">
-
-            <article class="Hablame">
-                <h2 class="h2-main">Hablemos</h2>
-                <p class="main-construccion">Dejanos tus dudas y nos ponemos en contacto.</p>
-                <a href="https://walink.co/p9vfyy" target="_blank" rel="noopener noreferrer">Consultar</a>
-            </article>
-
-
-            <article class="wsp">
-                <h2 class="h2-main">whatsapp</h2>
-                <p class="main-construccion">11-34102311.</p>
-                <a href="https://walink.co/p9vfyy" target= "_blank" rel="noopener noreferrer"> 
-                <img src="../img/whats-logo.png" alt="logo de whatsapp"></a>
-            </article>  
-
-            <article class="ubicacion"> 
-                <h2 class="h2-main">Encontranos</h2>
-                <p class="main-construccion">Mazza 2033, Villa Adelina, San Isidro.</p>
-                <a href="https://maps.app.goo.gl/rNsdw47fW8N4J7Am8" target="_blank" rel="noopener noreferrer">ubicación</a>
-            </article>
-
-
-            <article class="comentario"> 
-                <h2 class="h2-main">Dejanos tu comentario</h2>
-            <!--formulario-->
-                <form action="/submint" method="post"> <!--etiqueta contenedora-->
-                    <label for="mensaje">mensaje:</label>
-                    <textarea name="mensaje" id="mensaje"></textarea>
-                    <input type="submit" value="Enviar">
-                </form>
-            </article>
-
-        </section>
-    </main>
-
-    <footer>
-        <nav class="footer-enlaces">
-            <a href="../index.html">inicio</a>
-            <a href="nosotros.html">nosotros</a>
-            <a href="servicios.html">servicios</a>
-            <a href="galeria.html">galeria</a>
-            <a href="presupuesto.html">presupuesto</a>
-        </nav>
-        <div class="logos-icon">
-            <address> 
-                <a href="mailto:solucionesezequiel@gmail.com" target="_blank" rel="noopener noreferrer">
-                    <img class="logos-footer" src="/img/gmail-loog.png" alt="Enviar correo a Soluciones Ezequiel">
+    <!-- Secciones de contacto -->
+    <section class="row g-4">
+        <!-- WhatsApp -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-3">
+                <h3>WhatsApp</h3>
+                <p>11-34102311</p>
+                <a href="https://walink.co/p9vfyy" target="_blank" rel="noopener noreferrer">
+                    <img src="../img/whats-logo.png" alt="WhatsApp" width="50">
                 </a>
-            </address>
-        
-            <a href="https://www.instagram.com/soluciones.ezequiel/" target="_blank" rel="noopener noreferrer">
-                <img class="logos-footer" src="/img/insta-logo.png" alt="instagram de Soluciones Ezequiel"> 
-            </a>
+            </div>
+        </div>
 
+        <!-- Ubicación -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-3">
+                <h3>Encontranos</h3>
+                <p>Mazza 2033, Villa Adelina, San Isidro</p>
+                <a href="https://maps.app.goo.gl/rNsdw47fW8N4J7Am8" target="_blank" rel="noopener noreferrer">
+                    Ver ubicación
+                </a>
+            </div>
+        </div>
+
+        <!-- Consultar -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-3">
+                <h3>Hablemos</h3>
+                <p>Dejanos tus dudas y nos ponemos en contacto.</p>
+                <a href="https://walink.co/p9vfyy" target="_blank" rel="noopener noreferrer" class="btn btn-success">Consultar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section class="mt-5">
+        <div class="card p-4">
+            <h3>Dejanos tu comentario</h3>
+            <form action="/submit" method="post">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+        <div class="logos-icon mb-3 mb-md-0">
+            <a href="mailto:solucionesezequiel@gmail.com" target="_blank" rel="noopener noreferrer">
+                <img class="logos-footer" src="/img/gmail-loog.png" alt="Gmail" width="30">
+            </a>
+            <a href="https://www.instagram.com/soluciones.ezequiel/" target="_blank" rel="noopener noreferrer">
+                <img class="logos-footer" src="/img/insta-logo.png" alt="Instagram" width="30">
+            </a>
             <a href="https://walink.co/p9vfyy" target="_blank" rel="noopener noreferrer">
-                <img class="logos-footer" src="/img/whats-logo.png" alt="Whatsapp de Soluciones Ezequiel">
+                <img class="logos-footer" src="/img/whats-logo.png" alt="Whatsapp" width="30">
             </a>
         </div>
-        <p class="derechos-footer">todos los derechos reservados © 2025 Soluciones Ezequiel</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <p class="mb-0">Todos los derechos reservados © 2025 Soluciones Ezequiel</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 </body>
 </html>
