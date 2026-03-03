@@ -1,122 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header>
-    <h1 class="h1-header">Nosotros</h1>
-    <div class="div-enlace-header">
-      <nav class="index-nav"> 
-        <img class="logotipo" src="../img/logo-solu.jpg" alt="logotipo de Soluciones Ezequiel">
-        
-        <ul class="enlace">
-         <li><a href="../index.html" aria-current="page"></a></li>
-         
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="servicios.html">servicios</a></li>
-          <li><a href="galeria.html">galeria</a></li>
-          <li><a href="contacto.html">contacto</a></li>
-          <li><a href="presupuesto.html">presupuesto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <main>
+<!-- Navbar responsive -->
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">
+        <img src="../img/logo-solu.jpg" alt="Logotipo Soluciones Ezequiel" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="presupuesto.html">Presupuesto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="container my-5">
 
   <!-- INTRO -->
-    <section class="nosotros-intro">
-      <h2 class="h2-main">Responsabilidad, personalización y calidad en cada servicio</h2>
-
-      <p class="main-construccion">
-      Nos caracteriza el compromiso con la calidad y la flexibilidad,
-      ofreciendo soluciones de herrería pensadas para cada cliente y cada presupuesto.
+  <section class="text-center mb-5">
+    <h1 class="h1-header">Nosotros</h1>
+     <h2 class="h2-main">Nuestra Filosofía de Trabajo</h2>
+      <p class="main-construccion">Nos definimos por un compromiso inquebrantable con la calidad artesanal y la precisión técnica. Entendemos que cada proyecto es único; por eso, nuestra metodología se basa en la flexibilidad y la escucha activa.
+        No solo trabajamos el hierro, diseñamos soluciones integrales que se adaptan tanto a las necesidades arquitectónicas de cada espacio como a las posibilidades presupuestarias de nuestros clientes. Nuestra meta es transformar materiales nobles en estructuras duraderas, garantizando un equilibrio perfecto entre estética, seguridad y funcionalidad.
       </p>
-
-      <a href="./contacto.html" class="btn btn-primary mt-3">
-      Solicitar visita
-      </a>
-    </section>
+      <a href="contacto.html" class="btn btn-primary mt-3">Solicitar visita</a>
+  </section>
 
   <!-- MISIÓN / VISIÓN / VALORES -->
-    <section class="nosotros-valores">
-      <article class="nosotros-card">
-        <h2 class="h2-main">Misión</h2>
-        <p class="main-construccion">Brindar soluciones de herrería de alta calidad, combinando diseño, precisión y durabilidad para satisfacer las necesidades de cada cliente.</p>
-      </article>
-
-      <article class="nosotros-card">
-        <h2 class="h2-main">Visión</h2>
-        <p class="main-construccion">Ser una empresa de referencia en herrería, reconocida por la excelencia en nuestros trabajos y la confianza construida con nuestros clientes.
-        </p>
-      </article>
-
-      <article class="nosotros-card">
-          <h2 class="h2-main">Valores</h2>
-            <ul class="list-unstyled">
-              <li><strong>Calidad:</strong> Trabajo cuidado y resistente.</li>
-              <li><strong>Compromiso:</strong> Cumplimos tiempos y acuerdos.</li>
-              <li><strong>Honestidad:</strong> Transparencia en presupuestos.</li>
-              <li><strong>Responsabilidad:</strong> Seguridad y buen servicio.</li>
-              <li><strong>Innovación:</strong> Mejora constante.</li>
-            </ul>
-      </article>
-    </section>
+  <section class="row g-4 text-center mb-5">
+    <div class="col-md-4">
+      <h2 class="h2-main">Misión</h2>
+      <p class="main-construccion">Brindar soluciones de herrería de alta calidad, combinando diseño, precisión y durabilidad para satisfacer las necesidades de cada cliente.</p>
+    </div>
+    <div class="col-md-4">
+      <h2 class="h2-main">Visión</h2>
+      <p class="main-construccion">Ser una empresa de referencia en herrería, reconocida por la excelencia en nuestros trabajos y la confianza construida con nuestros clientes.</p>
+    </div>
+    <div class="col-md-4">
+      <h2 class="h2-main">Valores</h2>
+      <ul class="list-unstyled main-construccion">
+        <li><strong>Calidad:</strong> Trabajo cuidado y resistente.</li>
+        <li><strong>Compromiso:</strong> Cumplimos tiempos y acuerdos.</li>
+        <li><strong>Honestidad:</strong> Transparencia en presupuestos.</li>
+        <li><strong>Responsabilidad:</strong> Seguridad y buen servicio.</li>
+        <li><strong>Innovación:</strong> Mejora constante.</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- POR QUÉ ELEGIRNOS -->
-    <section class="nosotros-elegir">
-      <h2 class="h2-main">¿Por qué elegirnos?</h2>
-      <p class="main-construccion">Porque jamás dejamos de mejorar nuestros servicios, incluyendo metodologías de desarrollo, prácticas de ingeniería, técnicas de gestión y controles de calidad.</p>
+  <section class="text-center mb-5">
+    <h2 class="h2-main">¿Por qué elegirnos?</h2>
+    <p class="main-construccion">Porque jamás dejamos de mejorar nuestros servicios, incluyendo metodologías de desarrollo, prácticas de ingeniería, técnicas de gestión y controles de calidad.</p>
+    <ol class="list-group list-group-numbered mt-3">
+      <li class="list-group-item">✔ Experiencia y oficio</li>
+      <li class="list-group-item">✔ Calidad garantizada</li>
+      <li class="list-group-item">✔ Atención personalizada</li>
+      <li class="list-group-item">✔ Versatilidad en proyectos</li>
+    </ol>
+  </section>
 
-      <article class="elegir-list">
-        <ol class="list-group">
-          <li class="list-group-item">✔ Experiencia y oficio</li>
-          <li class="list-group-item">✔ Calidad garantizada</li>
-          <li class="list-group-item">✔ Atención personalizada</li>
-          <li class="list-group-item">✔ Versatilidad en proyectos</li>
-        </ol>
-      </article>
-    </section>
+</main>
 
-  </main>
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <div class="logos-icon mb-3 mb-md-0">
+      <a href="mailto:solucionesezequiel@gmail.com" target="_blank" rel="noopener noreferrer">
+        <img class="logos-footer" src="/img/gmail-loog.png" alt="Gmail" width="30">
+      </a>
+      <a href="https://www.instagram.com/soluciones.ezequiel/" target="_blank" rel="noopener noreferrer">
+        <img class="logos-footer" src="/img/insta-logo.png" alt="Instagram" width="30">
+      </a>
+      <a href="https://walink.co/p9vfyy" target="_blank" rel="noopener noreferrer">
+        <img class="logos-footer" src="/img/whats-logo.png" alt="Whatsapp" width="30">
+      </a>
+    </div>
+    <p class="mb-0">Todos los derechos reservados © 2025 Soluciones Ezequiel</p>
+  </div>
+</footer>
 
-  <footer>
-        <nav class="footer-enlaces">
-            <a href="../index.html">inicio</a>
-            <a href="servicios.html">servicios</a>
-            <a href="galeria.html">galeria</a>
-            <a href="contacto.html">contacto</a>
-            <a href="presupuesto.html">presupuesto</a>
-        </nav>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-        <div class="logos-icon">
-
-          <address> 
-              <a href="mailto:solucionesezequiel@gmail.com" target="_blank" rel="noopener noreferrer">
-                  <img class="logos-footer" src="/img/gmail-loog.png" alt="Enviar correo a Soluciones Ezequiel">
-              </a>
-          </address>
-      
-          <a href="https://www.instagram.com/soluciones.ezequiel/" target="_blank" rel="noopener noreferrer">
-              <img class="logos-footer" src="/img/insta-logo.png" alt="instagram de Soluciones Ezequiel"> 
-          </a>
-
-          <a href="https://walink.co/p9vfyy" target="_blank" rel="noopener noreferrer">
-              <img class="logos-footer" src="/img/whats-logo.png" alt="Whatsapp de Soluciones Ezequiel"> 
-          </a>
-          </div>
-          <p class="derechos-footer">todos los derechos reservados © 2025 Soluciones Ezequiel</p>
-        
-  </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
 

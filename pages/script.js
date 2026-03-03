@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // ELEMENTOS
     const form = document.getElementById("formPresupuesto");
     const contenedor = document.getElementById("resultado");
     const mensajeError = document.getElementById("mensajeError");
@@ -45,52 +46,62 @@ document.addEventListener("DOMContentLoaded", () => {
     let presupuestos = JSON.parse(localStorage.getItem("presupuestos")) || [];
     let presupuestoActivo = null;
 
-    renderizar();
+    // SOLO renderiza si existe contenedor
+    if (contenedor) renderizar();
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    // ==============================
+    // FORMULARIO
+    // ==============================
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
 
-        const cliente = document.getElementById("cliente").value;
-        const email = document.getElementById("email").value;
-        const telefono = document.getElementById("telefono").value;
-        const tipo = document.getElementById("tipo").value;
-        const ancho = parseFloat(document.getElementById("ancho").value);
-        const alto = parseFloat(document.getElementById("alto").value);
-        const material = document.getElementById("material").value;
-        const pintura = document.getElementById("pintura").checked;
-        const instalacion = document.getElementById("instalacion").checked;
+            const cliente = document.getElementById("cliente")?.value;
+            const email = document.getElementById("email")?.value;
+            const telefono = document.getElementById("telefono")?.value;
+            const tipo = document.getElementById("tipo")?.value;
+            const ancho = parseFloat(document.getElementById("ancho")?.value);
+            const alto = parseFloat(document.getElementById("alto")?.value);
+            const material = document.getElementById("material")?.value;
+            const pintura = document.getElementById("pintura")?.checked;
+            const instalacion = document.getElementById("instalacion")?.checked;
 
-        if (!tipo || !material || ancho <= 0 || alto <= 0) {
-            mensajeError.textContent = "Completar correctamente todos los campos.";
-            return;
-        }
+            if (!tipo || !material || ancho <= 0 || alto <= 0) {
+                if (mensajeError) {
+                    mensajeError.textContent = "Completar correctamente todos los campos.";
+                }
+                return;
+            }
 
-        mensajeError.textContent = "";
+            if (mensajeError) mensajeError.textContent = "";
 
-        const nuevo = new Presupuesto(
-            Date.now(),
-            cliente,
-            email,
-            telefono,
-            tipo,
-            ancho,
-            alto,
-            material,
-            pintura,
-            instalacion
-        );
+            const nuevo = new Presupuesto(
+                Date.now(),
+                cliente,
+                email,
+                telefono,
+                tipo,
+                ancho,
+                alto,
+                material,
+                pintura,
+                instalacion
+            );
 
-        nuevo.calcularTotal();
-        presupuestos.push(nuevo);
+            nuevo.calcularTotal();
+            presupuestos.push(nuevo);
 
-        guardarStorage();
-        renderizar();
-        form.reset();
+            guardarStorage();
+            renderizar();
+            form.reset();
 
-        mostrarNotificacion(nuevo);
-    });
+            mostrarNotificacion(nuevo);
+        });
+    }
 
     function mostrarNotificacion(presupuesto) {
+        if (!noti) return;
+
         noti.innerHTML = `
             <div style="margin-top:15px; padding:15px; background:#e8f5e9; border:1px solid #4caf50; border-radius:8px;">
                 <strong>¡Presupuesto enviado correctamente!</strong><br><br>
@@ -102,53 +113,62 @@ document.addEventListener("DOMContentLoaded", () => {
         noti.classList.remove("oculto");
     }
 
+    // ==============================
+    // MODAL
+    // ==============================
     window.abrirModal = function(id) {
         presupuestoActivo = id;
-        document.getElementById("modalTurno").classList.remove("oculto");
+        const modal = document.getElementById("modalTurno");
+        if (modal) modal.classList.remove("oculto");
     }
 
     window.cerrarModal = function() {
-        document.getElementById("modalTurno").classList.add("oculto");
+        const modal = document.getElementById("modalTurno");
+        if (modal) modal.classList.add("oculto");
     }
 
-  window.confirmarTurno = function() {
-    const fecha = document.getElementById("fechaTurno").value;
-    const hora = document.getElementById("horaTurno").value;
+    window.confirmarTurno = function() {
+        const fecha = document.getElementById("fechaTurno")?.value;
+        const hora = document.getElementById("horaTurno")?.value;
 
-    if (!fecha || !hora) {
-        alert("Seleccione fecha y horario");
-        return;
+        if (!fecha || !hora) {
+            alert("Seleccione fecha y horario");
+            return;
+        }
+
+        const presupuesto = presupuestos.find(p => p.id === presupuestoActivo);
+        if (!presupuesto) return;
+
+        presupuesto.turno = { fecha, hora };
+        presupuesto.estado = "Turno Agendado";
+
+        guardarStorage();
+        renderizar();
+        cerrarModal();
+        mostrarConfirmacionTurno(presupuesto);
     }
 
-    const presupuesto = presupuestos.find(p => p.id === presupuestoActivo);
+    function mostrarConfirmacionTurno(presupuesto) {
+        if (!noti) return;
 
-    presupuesto.turno = { fecha, hora };
-    presupuesto.estado = "Turno Agendado";
+        noti.innerHTML = `
+            <div style="margin-top:15px; padding:15px; background:#e3f2fd; border:1px solid #2196f3; border-radius:8px;">
+                <strong>¡Turno confirmado correctamente!</strong><br><br>
+                📅 Fecha: ${presupuesto.turno.fecha}<br>
+                ⏰ Hora: ${presupuesto.turno.hora}<br><br>
+                Se envió la confirmación al email: <strong>${presupuesto.email}</strong>
+            </div>
+        `;
 
-    guardarStorage();
-    renderizar();
-    cerrarModal();
+        noti.classList.remove("oculto");
+    }
 
-    // 🔔 Mostrar confirmación por mail
-    mostrarConfirmacionTurno(presupuesto);
-}
-function mostrarConfirmacionTurno(presupuesto) {
-    const noti = document.getElementById("notificacion");
-
-    noti.innerHTML = `
-        <div style="margin-top:15px; padding:15px; background:#e3f2fd; border:1px solid #2196f3; border-radius:8px;">
-            <strong>¡Turno confirmado correctamente!</strong><br><br>
-            📅 Fecha: ${presupuesto.turno.fecha}<br>
-            ⏰ Hora: ${presupuesto.turno.hora}<br><br>
-            Se envió la confirmación al email: <strong>${presupuesto.email}</strong>
-        </div>
-    `;
-
-    noti.classList.remove("oculto");
-}
-
-
+    // ==============================
+    // RENDERIZAR
+    // ==============================
     function renderizar() {
+        if (!contenedor) return;
+
         contenedor.innerHTML = "";
 
         presupuestos.forEach(p => {
@@ -181,15 +201,19 @@ function mostrarConfirmacionTurno(presupuesto) {
     }
 
     function actualizarEstadisticas() {
+        if (!cantidadSpan || !totalAcumuladoSpan) return;
+
         cantidadSpan.textContent = presupuestos.length;
         const total = presupuestos.reduce((acc, p) => acc + p.total, 0);
         totalAcumuladoSpan.textContent = total.toLocaleString();
     }
 
-    btnBorrar.addEventListener("click", () => {
-        presupuestos = [];
-        guardarStorage();
-        renderizar();
-    });
+    if (btnBorrar) {
+        btnBorrar.addEventListener("click", () => {
+            presupuestos = [];
+            guardarStorage();
+            renderizar();
+        });
+    }
 
 });

@@ -1,127 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
-  <header>
-    <h1 class="h1-header">Servicios</h1>
-    <div class="div-enlace-header">
-      <nav class="index-nav" aria-current="Servicios">
-        <img class="logotipo" src="../img/logo-solu.jpg" alt="logotipo de Soluciones Ezequiel">
-          
-        <ul class="enlace">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="nosotros.html">nosotros</a></li>
-          <li><a href="galeria.html">galeria</a></li>
-          <li><a href="contacto.html">contacto</a></li>
-          <li><a href="presupuesto.html">presupuesto</a></li>
-        </ul>
-      </nav>
+
+<!-- Navbar responsive -->
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">
+        <img src="../img/logo-solu.jpg" alt="Logotipo Soluciones Ezequiel" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="presupuesto.html">Presupuesto</a></li>
+      </ul>
     </div>
-  </header>
+  </div>
+</nav>
+</header>
 
-<main>
-  <section class="servicios-grid">
-    <article class="servicio-card">
-      <h2 class="h2-main">Herrería</h2>
-      <p class="main-construccion">Realizamos reparaciones y fabricaciones a medida en hierro, adaptándonos a cada espacio y necesidad.</p>
-    </article>
+<main class="container my-5">
 
-    <article class="servicio-card">
-      <h2 class="h2-main">Escaleras</h2>
-      <p class="main-construccion">Fabricación de escaleras a medida, optimizando el espacio y respetando el diseño elegido.</p>
-    </article>
+  <!-- Sección de servicios -->
+     <section class="my-5 text-center">
+      <h2 class="h2-main">Soluciones Integrales en Herrería y Construcción</h2>
+      <p>Ofrecemos un catálogo completo de servicios diseñados para brindar seguridad, funcionalidad y estética a sus espacios. Nos especializamos en la herrería de obra a medida, cubriendo desde la fabricación de aberturas y sistemas de seguridad hasta el desarrollo de estructuras complejas y construcción en seco.
 
-    <article class="servicio-card">
-      <h2 class="h2-main">Estructuras</h2>
-      <p class="main-construccion">Entrepisos, estanterías, alacenas y estructuras metálicas para proyectos personalizados.</p>
-    </article>
+          Combinamos técnicas tradicionales con sistemas modernos para garantizar resultados de alta precisión, adaptándonos a los requerimientos técnicos y arquitectónicos de cada proyecto.
+      </p>
+     </section>
+  <section class="row g-4">
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Herrería</h2><p class="main-construccion">Realizamos reparaciones y fabricaciones a medida en hierro, adaptándonos a cada espacio y necesidad.</p></article></div>
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Escaleras</h2><p class="main-construccion">Fabricación de escaleras a medida, optimizando el espacio y respetando el diseño elegido.</p></article></div>
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Estructuras</h2><p class="main-construccion">Entrepisos, estanterías, alacenas y estructuras metálicas para proyectos personalizados.</p></article></div>
 
-    <article class="servicio-card">
-      <h2 class="h2-main">Portones</h2>
-      <p class="main-construccion">Fabricación y reparación de portones adaptados al espacio y requerimientos del cliente.</p>
-    </article>
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Portones</h2><p class="main-construccion">Fabricación y reparación de portones adaptados al espacio y requerimientos del cliente.</p></article></div>
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Entrepisos</h2><p class="main-construccion">Entrepisos de madera o combinados con estructura de hierro.</p></article></div>
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Techos</h2><p class="main-construccion">Colocación de techos de machimbre con excelente terminación.</p></article></div>
 
-    <article class="servicio-card">
-      <h2 class="h2-main">Entrepisos</h2>
-      <p class="main-construccion">Entrepisos de madera o combinados con estructura de hierro.</p>
-    </article>
-
-    <article class="servicio-card">
-      <h2 class="h2-main">Techos</h2>
-      <p class="main-construccion">Colocación de techos de machimbre con excelente terminación.</p>
-    </article>
-
-    <article class="servicio-card">
-      <h2 class="h2-main">Construcción en seco</h2>
-      <p class="main-construccion">Sistema moderno, limpio y eficiente para optimizar tiempos y costos de obra.</p>
-    </article>
-    <article class="servicio-card">
-      <h2 class="h2-main">Placas de yeso</h2>
-      <p class="main-construccion">Paredes interiores con excelente aislación térmica y acústica.</p>
-    </article>
-
-    <article class="servicio-card">
-      <h2 class="h2-main">Cielorrasos</h2>
-      <p class="main-construccion">Solución rápida, económica y moderna para cielos rasos.</p>
-    </article>
-
-    <article class="servicio-card">
-      <h2 class="h2-main">Cerramientos</h2>
-      <p class="main-construccion"> Cerramientos de aluminio para altillos, lavaderos y más.</p>
-    </article>
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Construcción en seco</h2><p class="main-construccion">Sistema moderno, limpio y eficiente para optimizar tiempos y costos de obra.</p></article></div>
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Placas de yeso</h2><p class="main-construccion">Paredes interiores con excelente aislación térmica y acústica.</p></article></div>
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Cielorrasos</h2><p class="main-construccion">Solución rápida, económica y moderna para cielos rasos.</p></article></div>
+    <div class="col-md-4"><article class="servicio-card"><h2 class="h2-main">Cerramientos</h2><p class="main-construccion">Cerramientos de aluminio para altillos, lavaderos y más.</p></article></div>
   </section>
 
-  <h1>Simulador de presupuestoo de Herrería</h1>
-  <p>Este simulador permite calcular un presupuesto estimado para distintos trabajos de herrería.</p>
-  <nav>
-    <ul>
-      <li>
-        <a href="/pages/presupuesto.html"> Simular presupuesto</a>
+  <!-- Simulador de presupuesto -->
+  <section class="my-5 text-center">
+    <h2 class="h2-main">Simulador de presupuesto</h2>
+    <p>Calcula un presupuesto estimado para distintos trabajos de herrería.</p>
+    <a href="presupuesto.html" class="btn btn-primary mt-2">Simular presupuesto</a>
+  </section>
 
-      </li>
-    </ul>
-  </nav>
 </main>
 
-<footer>
-        <nav class="footer-enlaces">
-            <a href="../index.html">Inicio</a>
-            <a href="nosotros.html">nosotros</a>
-            <a href="galeria.html">galeria</a>
-            <a href="contacto.html">contacto</a>
-            <a href="presupuesto.html">presupuesto</a>
-        </nav>
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <div class="logos-icon mb-3 mb-md-0">
+      <a href="mailto:solucionesezequiel@gmail.com" target="_blank" rel="noopener noreferrer">
+        <img class="logos-footer" src="/img/gmail-loog.png" alt="Gmail" width="30">
+      </a>
+      <a href="https://www.instagram.com/soluciones.ezequiel/" target="_blank" rel="noopener noreferrer">
+        <img class="logos-footer" src="/img/insta-logo.png" alt="Instagram" width="30">
+      </a>
+      <a href="https://walink.co/p9vfyy" target="_blank" rel="noopener noreferrer">
+        <img class="logos-footer" src="/img/whats-logo.png" alt="Whatsapp" width="30">
+      </a>
+    </div>
+    <p class="mb-0">Todos los derechos reservados © 2025 Soluciones Ezequiel</p>
+  </div>
+</footer>
 
-        <div class="logos-icon"> 
-          <address> 
-            <a href="mailto:solucionesezequiel@gmail.com" target="_blank" rel="noopener noreferrer">
-                <img class="logos-footer" src="/img/gmail-loog.png" alt="Enviar correo a Soluciones Ezequiel">
-            </a>
-          </address>
-      
-          <a href="https://www.instagram.com/soluciones.ezequiel/" target="_blank" rel="noopener noreferrer">
-              <img class="logos-footer" src="/img/logooo-inta.png" alt="instagram de Soluciones Ezequiel">
-          </a>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-          <a href="https://walink.co/p9vfyy" target="_blank" rel="noopener noreferrer">
-              <img class="logos-footer" src="/img/logooo-wh.png" alt="Whatsapp de Soluciones Ezequiel"> 
-          </a>
-          </div>
-          <p class="derechos-footer">todos los derechos reservados © 2025 Soluciones Ezequiel</p>
-        
-  </footer>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  <script src="./css/script.js"></script>
 </body>
 </html>

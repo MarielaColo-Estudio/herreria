@@ -1,84 +1,73 @@
 header {
-  background-color: rgba(32, 110, 58, 0.493);
-  padding: 20px 0;
-}
-
-/* Contenedor general del header */
-.div-enlace-header {
+  background-color: $primary;
+  padding: 1rem $padding-section;
   display: flex;
-  flex-direction: column; // uno abajo del otro
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
-}
+  position: relative;
 
-/* Título */
-.h1-header {
-  font-family: $font-bebas;
-  color: white;
-  text-align: center;
-  margin-bottom: 10px;
-}
+  .logotipo {
+    width: 150px;
+    height: auto;
+  }
 
-/* Nav */
-.index-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
 
-/* Logo */
-.logotipo {
-  display: flex;
-  align-items: center;
-  justify-items: start;
-  gap: 2rem;
-  width: 20%;
-  height: auto;
-  
-}
+      li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
 
-/* Menú */
-.enlace {
-  list-style: none;
-  display: flex;
-  align-items: end;
- justify-items: center;
-  gap: 20px;
-  padding: 0;
-}
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
 
-.enlace li a {
-    text-decoration: none;
-    color: white;
-  font-family: $font-roboto;
-  font-weight: 500;
-  padding: 5px 0;
-/* subrayado animado */
-.enlace li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: rgba(32, 110, 58, 0.493);
-  transition: width 0.3s ease;
-}
-}
+  // Menu hamburguesa
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
 
-/*hover (pasar el mouse) */
+    span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+  }
 
-.enlace li a:hover {
-  color: #4dbc74;
-}
+  @media (max-width: 768px) {
+    nav ul {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: $primary;
+      flex-direction: column;
+      width: 200px;
+      display: none;
+      border-radius: 0 0 $radius $radius;
+      overflow: hidden;
 
-.enlace li a:hover::after {
-  width: 100%;
-}
+      &.active {
+        display: flex;
+      }
 
+      li {
+        padding: 1rem;
+      }
+    }
 
-/*click*/
-.enlace li a:active {
-    color: darken(#ec7c7c, 5%);
+    .menu-toggle {
+      display: flex;
+    }
+  }
 }
