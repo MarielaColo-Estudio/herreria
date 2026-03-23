@@ -118,6 +118,17 @@
         </form>
     </section>
 
+    <div id="modalTurno" class="oculto">
+        <div class="bg-white p-4 rounded">
+            <h4>Agendar turno</h4>
+            <input type="date" id="fechaTurno" class="form-control mb-2">
+            <input type="time" id="horaTurno" class="form-control mb-2">
+            <button onclick="confirmarTurno()" class="btn btn-success">Confirmar</button>
+            <button onclick="cerrarModal()" class="btn btn-secondary">Cancelar</button>
+        </div>
+    </div>
+    
+
     <!-- Resultados -->
     <section class="result-section mb-5">
         <h2>Presupuestos Generados</h2>
@@ -132,23 +143,37 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-dark text-white py-4">
-  <div class="container d-flex justify-content-between align-items-center flex-wrap">
-    <div class="logos-icon mb-3 mb-md-0">
-      <a href="mailto:solucionesezequiel@gmail.com" target="_blank" rel="noopener noreferrer">
-        <img class="logos-footer" src="/img/gmail-loog.png" alt="Gmail" width="30">
+<footer>
+  <nav class="footer-enlaces">
+    <a href="nosotros.html">Nosotros</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="galeria.html">Galería</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="presupuesto.html">Presupuesto</a>
+  </nav>
+
+  <div class="logos-icon">
+    <address> 
+      <a href="mailto:solucionesezequiel@gmail.com">
+        <img class="logos-footer" src="./img/gmail-loog.png" alt="Enviar correo a Soluciones Ezequiel">
       </a>
-      <a href="https://www.instagram.com/soluciones.ezequiel/" target="_blank" rel="noopener noreferrer">
-        <img class="logos-footer" src="/img/insta-logo.png" alt="Instagram" width="30">
-      </a>
-      <a href="https://walink.co/p9vfyy" target="_blank" rel="noopener noreferrer">
-        <img class="logos-footer" src="/img/whats-logo.png" alt="Whatsapp" width="30">
-      </a>
-    </div>
-    <p class="mb-0">Todos los derechos reservados © 2025 Soluciones Ezequiel</p>
+    </address>
+
+    <a href="https://www.instagram.com/soluciones.ezequiel/">
+      <img class="logos-footer" src="./img/insta-logo.png" alt="Instagram de Soluciones Ezequiel">
+    </a>
+
+    <a href="https://walink.co/p9vfyy">
+      <img class="logos-footer" src="./img/whats-logo.png" alt="Whatsapp de Soluciones Ezequiel">
+    </a>
   </div>
+
+  <p class="derechos-footer">Todos los derechos reservados © 2025 Soluciones Ezequiel</p>
 </footer>
 
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Scripts -->
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

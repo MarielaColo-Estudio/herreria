@@ -17,43 +17,50 @@ document.addEventListener("DOMContentLoaded", () => {
             this.total = 0;
         }
 
-        calcularTotal() {
-            const precios = {
-                hierro: 50000,
-                aluminio: 70000,
-                acero: 90000
-            };
+        async calcularTotal() {
+            try {
+                const res = await fetch("https://mocki.io/v1/0a8f2f6e-3fd9-4d6d-9c9a-123456789abc");
+                const precios = await res.json();
 
-            let superficie = this.ancho * this.alto;
-            this.total = superficie * precios[this.material];
+                let superficie = this.ancho * this.alto;
+                this.total = superficie * precios[this.material];
 
-            if (this.pintura) this.total += 15000;
-            if (this.instalacion) this.total += 20000;
+                if (this.pintura) this.total += 15000;
+                if (this.instalacion) this.total += 20000;
 
-            return this.total;
+                return this.total;
+            } catch {
+                Swal.fire("Error", "No se pudieron obtener los precios", "error");
+            }
         }
     }
 
-    // ELEMENTOS
     const form = document.getElementById("formPresupuesto");
     const contenedor = document.getElementById("resultado");
     const mensajeError = document.getElementById("mensajeError");
     const cantidadSpan = document.getElementById("cantidad");
     const totalAcumuladoSpan = document.getElementById("totalAcumulado");
     const btnBorrar = document.getElementById("btnBorrar");
-    const noti = document.getElementById("notificacion");
 
     let presupuestos = JSON.parse(localStorage.getItem("presupuestos")) || [];
     let presupuestoActivo = null;
 
-    // SOLO renderiza si existe contenedor
     if (contenedor) renderizar();
 
-    // ==============================
-    // FORMULARIO
-    // ==============================
+    // 🔹 PRECARGA DE DATOS
     if (form) {
-        form.addEventListener("submit", (e) => {
+        document.getElementById("cliente").value = "Juan Pérez";
+        document.getElementById("email").value = "juan@email.com";
+        document.getElementById("telefono").value = "1122334455";
+        document.getElementById("ancho").value = 2;
+        document.getElementById("alto").value = 1.5;
+    }
+
+    // ===============
+    // FORMULARIO
+    // ===============
+    if (form) {
+        form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
             const cliente = document.getElementById("cliente")?.value;
@@ -67,13 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const instalacion = document.getElementById("instalacion")?.checked;
 
             if (!tipo || !material || ancho <= 0 || alto <= 0) {
-                if (mensajeError) {
-                    mensajeError.textContent = "Completar correctamente todos los campos.";
-                }
+                mensajeError.textContent = "Completar correctamente todos los campos.";
                 return;
             }
 
-            if (mensajeError) mensajeError.textContent = "";
+            mensajeError.textContent = "";
 
             const nuevo = new Presupuesto(
                 Date.now(),
@@ -88,9 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 instalacion
             );
 
-            nuevo.calcularTotal();
-            presupuestos.push(nuevo);
+            await nuevo.calcularTotal();
 
+            presupuestos.push(nuevo);
             guardarStorage();
             renderizar();
             form.reset();
@@ -100,31 +105,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function mostrarNotificacion(presupuesto) {
-        if (!noti) return;
-
-        noti.innerHTML = `
-            <div style="margin-top:15px; padding:15px; background:#e8f5e9; border:1px solid #4caf50; border-radius:8px;">
-                <strong>¡Presupuesto enviado correctamente!</strong><br><br>
+        Swal.fire({
+            icon: "success",
+            title: "Presupuesto generado",
+            html: `
                 ${presupuesto.cliente}, el presupuesto fue enviado a ${presupuesto.email}.<br><br>
-                ¿Desea agendar un turno?<br><br>
-                <button onclick="abrirModal(${presupuesto.id})">Agendar Turno</button>
-            </div>
-        `;
-        noti.classList.remove("oculto");
+                ¿Desea agendar un turno?
+            `,
+            showCancelButton: true,
+            confirmButtonText: "Agendar turno"
+        }).then(result => {
+            if (result.isConfirmed) {
+                abrirModal(presupuesto.id);
+            }
+        });
     }
 
-    // ==============================
+    // ============
     // MODAL
-    // ==============================
+    // ============
     window.abrirModal = function(id) {
         presupuestoActivo = id;
-        const modal = document.getElementById("modalTurno");
-        if (modal) modal.classList.remove("oculto");
+        document.getElementById("modalTurno")?.classList.remove("oculto");
     }
 
     window.cerrarModal = function() {
-        const modal = document.getElementById("modalTurno");
-        if (modal) modal.classList.add("oculto");
+        document.getElementById("modalTurno")?.classList.add("oculto");
     }
 
     window.confirmarTurno = function() {
@@ -132,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const hora = document.getElementById("horaTurno")?.value;
 
         if (!fecha || !hora) {
-            alert("Seleccione fecha y horario");
+            Swal.fire("Datos incompletos", "Seleccione fecha y horario", "warning");
             return;
         }
 
@@ -145,30 +151,14 @@ document.addEventListener("DOMContentLoaded", () => {
         guardarStorage();
         renderizar();
         cerrarModal();
-        mostrarConfirmacionTurno(presupuesto);
+
+        Swal.fire("Turno confirmado", `📅 ${fecha} ⏰ ${hora}`, "success");
     }
 
-    function mostrarConfirmacionTurno(presupuesto) {
-        if (!noti) return;
-
-        noti.innerHTML = `
-            <div style="margin-top:15px; padding:15px; background:#e3f2fd; border:1px solid #2196f3; border-radius:8px;">
-                <strong>¡Turno confirmado correctamente!</strong><br><br>
-                📅 Fecha: ${presupuesto.turno.fecha}<br>
-                ⏰ Hora: ${presupuesto.turno.hora}<br><br>
-                Se envió la confirmación al email: <strong>${presupuesto.email}</strong>
-            </div>
-        `;
-
-        noti.classList.remove("oculto");
-    }
-
-    // ==============================
+    // ===============
     // RENDERIZAR
-    // ==============================
+    // ===============
     function renderizar() {
-        if (!contenedor) return;
-
         contenedor.innerHTML = "";
 
         presupuestos.forEach(p => {
@@ -181,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>Total: $${p.total.toLocaleString()}</p>
                 <p><strong>Estado:</strong> ${p.estado}</p>
                 ${p.turno ? `<p><strong>Turno:</strong> ${p.turno.fecha} - ${p.turno.hora}</p>` : ""}
-                <button onclick="eliminar(${p.id})">Eliminar</button>
+                <button class="btn-eliminar btn btn-danger" data-id="${p.id}">Eliminar</button>
             `;
 
             contenedor.appendChild(div);
@@ -190,7 +180,15 @@ document.addEventListener("DOMContentLoaded", () => {
         actualizarEstadisticas();
     }
 
-    window.eliminar = function(id) {
+    // 🔹 EVENT DELEGATION
+    contenedor.addEventListener("click", (e) => {
+        if (e.target.classList.contains("btn-eliminar")) {
+            const id = Number(e.target.dataset.id);
+            eliminar(id);
+        }
+    });
+
+    function eliminar(id) {
         presupuestos = presupuestos.filter(p => p.id !== id);
         guardarStorage();
         renderizar();
@@ -201,8 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function actualizarEstadisticas() {
-        if (!cantidadSpan || !totalAcumuladoSpan) return;
-
         cantidadSpan.textContent = presupuestos.length;
         const total = presupuestos.reduce((acc, p) => acc + p.total, 0);
         totalAcumuladoSpan.textContent = total.toLocaleString();
@@ -210,9 +206,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (btnBorrar) {
         btnBorrar.addEventListener("click", () => {
-            presupuestos = [];
-            guardarStorage();
-            renderizar();
+            Swal.fire({
+                title: "¿Borrar historial?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Sí, borrar"
+            }).then(result => {
+                if (result.isConfirmed) {
+                    presupuestos = [];
+                    guardarStorage();
+                    renderizar();
+                }
+            });
         });
     }
 
